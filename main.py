@@ -12,19 +12,18 @@ def add(x, y):
 def multiply(x, y):
     total = 0
     if y < 0:
-        for i in range(abs(y)):
+        for i in range(-y):
             total = add(total, -x)
     else:
         for i in range(y):
             total = add(total, x)
-        return total
-
+    return total
 
 def power(x, n):
     total = 1
     if x < 0:
         for i in range(n):
-            total = multiply(total, abs(x))
+            total = multiply(total, -x)
         return -total
     else:
         for i in range(n):
